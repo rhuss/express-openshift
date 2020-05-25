@@ -2,9 +2,9 @@ name: express-openshift
 version: 0.0.3
 author: rhuss
 org: rhuss
-description: Deploys a serverless Express.js application onto Knative.
-keywords: kubernetes, knative, serverless, express
-repo: https://github.com/rhuss/express-knative
+description: Deploys a serverless Express.js application onto OpenShift.
+keywords: kubernetes, knative, openshift, serverless, express
+repo: https://github.com/rhuss/express-openshift
 readme: ''
 license: MIT
 main: ./src
