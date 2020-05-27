@@ -50,6 +50,8 @@ async function openShiftBuild(inputs = {}) {
   }
 
   // Do the actual build
+  console.log('DEBUG')
+  console.dir(options)
   await nodeshift.build(options)
 }
 module.exports = openShiftBuild
