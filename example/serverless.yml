@@ -2,7 +2,7 @@ org: jdoe
 app: hello
 name: hello
 
-component: express-openshift
+component: express-openshift@dev
 
 inputs:
   src: ./src
