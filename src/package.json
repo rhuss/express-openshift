@@ -17,6 +17,8 @@
     "@serverless/kubernetes-pod": "github:serverless-components/kubernetes-pod#master",
     "globby": "^11.0.0",
     "nodeshift": "^6.1.0",
-    "tar": "^6.0.1"
+    "openshift-rest-client": "^4.1.0",
+    "tar": "^6.0.1",
+    "write-yaml": "^1.0.0"
   }
 }

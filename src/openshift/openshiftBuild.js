@@ -1,4 +1,5 @@
 const nodeshift = require('nodeshift')
+const openShiftAuth = require('./openShiftAuth')
 
 const defaults = {
   registryAddress: 'docker.io',
@@ -28,30 +29,10 @@ async function openShiftBuild(inputs = {}) {
     options.outputImageStreamName = inputs.name
   }
 
-  if (inputs.openShiftAuth) {
-    options.configLocation = {
-      clusters: [
-        {
-          name: 'cluster',
-          skipTLSVerify: inputs.openShiftAuth.skipTLSVerify,
-          server: inputs.openShiftAuth.url
-        }
-      ],
-      users: [{ name: 'user', token: inputs.openShiftAuth.token }],
-      contexts: [
-        {
-          name: 'context',
-          user: 'user',
-          cluster: 'cluster'
-        }
-      ],
-      currentContext: 'context'
-    }
-  }
+  options.configLocation = openShiftAuth(this.credentials)
+  // console.log('Config: ' + fs.readFileSync(tmpfile))
 
   // Do the actual build
-  console.log('DEBUG')
-  console.dir(options)
-  await nodeshift.build(options)
+  return await nodeshift.build(options)
 }
 module.exports = openShiftBuild
