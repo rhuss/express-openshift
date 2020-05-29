@@ -1,6 +1,6 @@
 org: jdoe
-app: my-app
-name: my-app
+app: hello
+name: hello
 
 component: express-openshift
 
